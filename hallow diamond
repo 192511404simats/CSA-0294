@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int row, i, j;
+    char c;
+
+    scanf("%d", &row);
+    scanf(" %c", &c);
+
+    // Upper half
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < row - i - 1; j++)
+            printf(" ");
+
+        for (j = 0; j < 2 * i + 1; j++) {
+            if (j == 0 || j == 2 * i)
+                printf("%c", c);
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    // Lower half
+    for (i = row - 2; i >= 0; i--) {
+        for (j = 0; j < row - i - 1; j++)
+            printf(" ");
+
+        for (j = 0; j < 2 * i + 1; j++) {
+            if (j == 0 || j == 2 * i)
+                printf("%c", c);
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
